@@ -1,0 +1,285 @@
+﻿body {
+    font-family: Arial;
+    font-size: 20px;
+    background-color: black;
+}
+
+
+
+#page {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 200px;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 40px 10px #ffffff;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+li, h1, h2, h3, p, table, span {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
+
+.grid {
+    width: 100px;
+    height: 100px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 500ms;
+}
+.grid:hover {
+    width: 90px;
+    height: 90px;
+   
+}
+
+.grid:active {
+    width: 75px;
+    height: 75px;
+}
+
+table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+    box-shadow: 0px 0px 40px 10px #000;
+    background-color: #000;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.violet {
+    background-color: #FF00FF;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue-marked {
+    background-color: #1E90FF;
+}
+
+.green-marked {
+    background-color: #2E8B57;
+}
+
+.yellow-marked {
+    background-color: #FFFF66;
+}
+
+.violet-marked {
+    background-color: #EE82EE;
+}
+.red-marked {
+    background-color: #DC143C;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    float: left;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: black;
+    border: none;
+    transition: 500ms;
+    margin-left: 20px;
+}
+
+.button:hover {
+    background-color: aliceblue;
+    color: black;
+    cursor: pointer;
+}
+
+.nav {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: auto;
+}
+
+.nav-fix {
+    position: fixed !important;
+    position: absolute; 
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-left: 300px;
+    z-index:100;
+}
+.text {
+    margin: 20px;
+    display: inline;
+    font-size: 30px;
+    letter-spacing: 0.12em;
+}
+
+.list {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+}
+
+.comment {
+    overflow: auto;
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+    background-color: ghostwhite;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.10);
+}
+
+.comment-image {
+    max-height: 200px;
+    width: 150px;
+    float: left;
+    margin-right: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.30);
+}
+
+.intro:first-letter {
+    font-size: 200%;
+}
+
+
+.comment-text {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+
+.comment-date {
+    font-size: 14px;
+    font-style: italic;
+    float: right;
+}
+
+
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-btn {
+    border-radius: 40px;
+    border-top-right-radius: 5px;
+    float: left;
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: aliceblue;
+    color: black;
+    transition: 400ms;
+    animation-duration: 0.5s;
+}
+
+.nav-btn:hover {
+    background: black;
+    color: aliceblue;
+    padding-bottom: 10px;
+    position: relative;
+    animation-name: btn-animation;
+    animation-timing-function: ease;
+}
+
+@keyframes btn-animation {
+    0% {
+        bottom: 0px;
+    }
+
+    25% {
+        bottom: 3px;
+    }
+
+    50% {
+        bottom: -3px;
+    }
+
+    75% {
+        bottom: 3px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+form {
+    text-decoration: none;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.form-block {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+.label-title {
+    float: none;
+    text-align: center;
+    width: 100%;
+    padding: 2px;
+    display: block;
+}
+
+.line-input {
+    font-size: 18px;
+    width: 100%;
+    transition: 700ms;
+    text-align: center;
+}
+
+    .line-input:hover {
+        letter-spacing: 2px;
+    }
+
+    .line-input:active {
+        letter-spacing: 2px;
+    }
+
+
+.line-input {
+    border: #0f0f0f;
+    border-radius: 10px;
+}

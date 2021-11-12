@@ -1,0 +1,16 @@
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.exe
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.deps.json
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.runtimeconfig.json
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.runtimeconfig.dev.json
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.dll
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\ref\dots.dll
+D:\Studying\DotNet\DotsVS\dots\dots\bin\Release\net5.0\dots.pdb
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.csprojAssemblyReference.cache
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.AssemblyInfoInputs.cache
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.AssemblyInfo.cs
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.csproj.CoreCompileInputs.cache
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.dll
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\ref\dots.dll
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.pdb
+D:\Studying\DotNet\DotsVS\dots\dots\obj\Release\net5.0\dots.genruntimeconfig.cache

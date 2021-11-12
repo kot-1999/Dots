@@ -1,0 +1,5 @@
+D:\Studying\DotNet\DotsVS\dots\dotsVS\obj\x64\Release\net5.0\dotsVS.csprojAssemblyReference.cache
+D:\Studying\DotNet\DotsVS\dots\dotsVS\obj\x64\Release\net5.0\dotsVS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studying\DotNet\DotsVS\dots\dotsVS\obj\x64\Release\net5.0\dotsVS.AssemblyInfoInputs.cache
+D:\Studying\DotNet\DotsVS\dots\dotsVS\obj\x64\Release\net5.0\dotsVS.AssemblyInfo.cs
+D:\Studying\DotNet\DotsVS\dots\dotsVS\obj\x64\Release\net5.0\dotsVS.csproj.CoreCompileInputs.cache

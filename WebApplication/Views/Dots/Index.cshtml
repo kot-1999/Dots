@@ -1,0 +1,224 @@
+﻿<div id="page">
+
+    @model WebApplication.Models.DotsModel
+    @{
+        ViewData["Title"] = "Dots";
+    }
+    <link rel="stylesheet" href="~/css/dots.css" />
+    <h1 id="game">Let's play dots @Model.dotTable.player.Name !!!</h1>
+    @if (Model.dotTable.player.Name == "Player")
+    {
+        <h2>Login</h2>
+        <form action="/dots/login">
+            <div class="form-block">
+                <label for="lname" class="label-title">Name</label>
+                <input type="text" name="name" id="lname" class="line-input" placeholder="Frank" required=""><br>
+            </div>
+            <div class="form-block">
+                <label for="lpassword" class="label-title">Password</label>
+                <input type="password" name="password" id="lpassword" class="line-input" required=""><br>
+            </div>
+            <div class="form-block">
+                <input type="submit" class="button" name="login">
+            </div>
+
+        </form>
+    }
+        <nav class="nav">
+
+
+            <a href="#game-begin" class="nav-link">
+                <div class="nav-btn">
+                    Game
+                </div>
+            </a>
+
+            <a href="#top-players" class="nav-link">
+                <div class="nav-btn">
+                    Top Players
+                </div>
+            </a>
+
+            <a href="#comments" class="nav-link">
+                <div class="nav-btn">
+                    Comments
+                </div>
+            </a>
+            @if (Model.dotTable.player.Name != "Player")
+            {
+                <a href="#leave-comment" class="nav-link">
+                    <div class="nav-btn">
+                        Leave Comment
+                    </div>
+                </a>
+
+
+                <a href="/dots/logout" class="nav-link">
+                    <div class="nav-btn">
+                        Logout
+                    </div>
+                </a>
+            }
+
+        </nav>
+        <h2 id="game-begin">Game</h2>
+
+
+        @if (Model.dotTable.hasStep() == false)
+        {
+            <h2>You loose</h2>
+            <div class="nav">
+                <a href="/dots"><div class="button">Restart</div></a>
+            </div>
+        }
+        else
+        {
+            <h3>Score: @Model.dotTable.player.Score Highest score: @Model.dotTable.player.Highest</h3>
+            <table>
+                @for (int y = 0; y < Model.dotTable.Height; y++)
+                {
+
+                    <tr>
+                        @for (int x = 0; x < Model.dotTable.Width; x++)
+                        {
+                            String center = "";
+                            if (y == Model.dotTable.Height / 2 && x == 0)
+                            {
+                                center = "id=center";
+                            }
+                            else
+                            {
+                                center = "";
+                            }
+
+                            switch (Model.dotTable[y, x].GetColor())
+                            {
+                                case dots.Color.BLUE:
+                                    if (Model.dotTable[y, x].GetMark() == dots.Mark.UNMARKED)
+                                    {
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid blue"></div></a></td>
+                                    }
+                                    else
+                                    {
+                                        <td @center> <a href="/dots/Select?y=@y&x=@x"><div class="grid blue-marked"></div></a></td>
+                                    }
+                                    break;
+                                case dots.Color.GREEN:
+                                    if (Model.dotTable[y, x].GetMark() == dots.Mark.UNMARKED)
+                                    {
+                                        <td @center> <a href="/dots/Select?y=@y&x=@x"><div class="grid green"></div></a></td>
+                                    }
+                                    else
+                                    {
+
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid green-marked"></div> </a></td>
+                                    }
+                                    break;
+                                case dots.Color.YELLOW:
+                                    if (Model.dotTable[y, x].GetMark() == dots.Mark.UNMARKED)
+                                    {
+
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid yellow"></div></a></td>
+                                    }
+                                    else
+                                    {
+
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid yellow-marked"></div></a></td>
+                                    }
+                                    break;
+                                case dots.Color.VIOLET:
+                                    if (Model.dotTable[y, x].GetMark() == dots.Mark.UNMARKED)
+                                    {
+
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid violet"></div></a></td>
+                                    }
+                                    else
+                                    {
+
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid violet-marked"></div></a></td>
+                                    }
+                                    break;
+                                case dots.Color.RED:
+                                    if (Model.dotTable[y, x].GetMark() == dots.Mark.UNMARKED)
+                                    {
+                                        <td @center><a href="/dots/Select?y=@y&x=@x"><div class="grid red"></div></a></td>
+                                    }
+                                    else
+                                    {
+                                        <td @center> <a href="/dots/Select?y=@y&x=@x"><div class="grid red-marked"></div></a></td>
+                                    }
+                                    break;
+                            }
+
+                        }
+                    </tr>
+                }
+            </table>
+            <div class="nav-fix">
+                <a href="/dots/Collect"><div class="button">Collect</div></a>
+                <a href="/dots"><div class="button">Restart</div></a>
+                <a href="#game"><div class="button">^</div></a>
+            </div>
+        }
+        <h2 id="top-players">Top Players</h2>
+        <ol class="list">
+            @for (int i = 0; i < Model.infos.Count; i++)
+            {
+                <li>
+                    <p class="text">@Model.infos[i].Player</p>
+                    <p class="text">@Model.infos[i].HighestScore</p>
+                    <hr />
+                </li>
+            }
+        </ol>
+
+        <h2 id="comments">Comments</h2>
+
+        @for (int i = 0; i < Model.comments.Count; i++)
+        {
+            <div class="comment">
+                <img class="comment-image" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" />
+                <h3 class="comment-text">@Model.comments[i].Player</h3>
+                <p class="comment-text intro">@Model.comments[i].Comment</p>
+
+
+                @if (Model.comments[i].Raiting != 0)
+                {
+                    <p class="comment-date">Rate: @Model.comments[i].Raiting </p>
+                }
+                else
+                {
+                    <p class="comment-date">Not rated </p>
+                }
+
+            </div>
+        }
+        @if (Model.dotTable.player.Name != "Player")
+        {
+            <h2 id="leave-comment">Leave a comment</h2>
+            <form action="/dots/addComment">
+                <div class="form-block">
+                    <label for="comment" class="label-title">Leave your comment here:</label>
+                    <textarea id="comment" class="line-input" name="comment"></textarea>
+                </div>
+                <label for="rate" class="label-title">Rate the game:</label>
+                <select class="form-block" name="rate" id="rate">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <div class="form-block">
+                    <input type="submit" class="button">
+                </div>
+
+            </form>
+        }
+    </div>
+    <script src="~/js/script.js" type="module"></script>
